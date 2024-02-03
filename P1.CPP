@@ -44,9 +44,9 @@ public:
         this->lvl = temp.lvl;
     }
 
-    //shellow copy arr use same memory location example :=== babbar gabbar change then print the value are gabbar not gabbar babbar
-    //deep copy not use samew memory location after changes
-    
+    // shellow copy arr use same memory location example :=== babbar gabbar change then print the value are gabbar not gabbar babbar
+    // deep copy not use samew memory location after changes
+
     // getter - fetch the data or read the data
     // setter - set the value or set the value according to the condition
 
@@ -84,25 +84,45 @@ public:
         cout << "HEALTH is: " << health << endl;
         cout << "LVL is: " << lvl << endl;
     }
+    //DESTRUCTOR
+    
+    ~Hero()
+    {
+        cout << "desctructor called" << endl;
+    }
 };
 int main()
-{   
-    //default
-    Hero k0;
-    k0.printx(101, 'd');
+{
+    ////default
+    //     Hero k0;
+    //     k0.printx(101, 'd');
 
-    //single
-    Hero k1(10);
-    k1.printhealth();
+    ////single
+    //     Hero k1(10);
+    //     k1.printhealth();
 
-    //double
-    Hero k2(22, 'B');
-    k2.print();
-    k2.printx(10, 'x');
+    ////double
+    //     Hero k2(22, 'B');
+    //     Hero k3(33, 'v');
+    //     k2.print();
+    //     k3.print();
+    //     k2.printx(10, 'x');
 
     // COPY CONSTRUCTOR
-    Hero k5(k2);
-    k5.print();
+    //     Hero k5(k2);
+    //     k5.print();
+
+    // copy assignment
+
+    //     k2 = k3;
+    //     k2.print();
+    //     k3.print();
+
+    // Destructor
+
+    Hero D;               // static - automatic called destructor
+    Hero *d = new Hero(); // dynamic - manually called destructor
+    delete d;
 
     //   Hero *k = new Hero;
 

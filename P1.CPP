@@ -13,6 +13,8 @@ class Hero
 public:
     int health;
     char lvl;
+    static int timetocomplete; // use-not create a object for the access the data directly access the data by the class name
+                               // not a this keyword in static because this keyword use for pointer to current object
 
     // when object are created in given class the function callled constructor are involked like-krushang.hero()
     Hero()
@@ -84,15 +86,28 @@ public:
         cout << "HEALTH is: " << health << endl;
         cout << "LVL is: " << lvl << endl;
     }
-    //DESTRUCTOR
-    
+    // DESTRUCTOR
+
     ~Hero()
     {
         cout << "desctructor called" << endl;
     }
+
+    //static function - access static data
+
+    static int random(){
+        //cout << this->health << endl;
+        return timetocomplete;
+    }
 };
+// initilization
+int Hero::timetocomplete = 1000; //:: scope resolution opreater
 int main()
 {
+
+    cout << Hero::random() << endl;
+    
+    //cout << Hero::random() << endl;
     ////default
     //     Hero k0;
     //     k0.printx(101, 'd');
@@ -120,9 +135,18 @@ int main()
 
     // Destructor
 
-    Hero D;               // static - automatic called destructor
-    Hero *d = new Hero(); // dynamic - manually called destructor
-    delete d;
+    // Hero D;               // static - automatic called destructor
+    // Hero *d = new Hero(); // dynamic - manually called destructor
+    // delete d;
+
+    // cout << Hero::timetocomplete << endl;
+    // Hero a;
+    // cout << a.timetocomplete << endl;
+
+    // Hero b;
+    // b.timetocomplete = 1000;
+    // cout << a.timetocomplete << endl;
+    // cout << b.timetocomplete << endl;
 
     //   Hero *k = new Hero;
 
